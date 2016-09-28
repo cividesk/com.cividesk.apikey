@@ -17,7 +17,7 @@
   <version>1.0</version>
   <develStage>stable</develStage>
   <compatibility>
-    <ver>4.2</ver><ver>4.3</ver><ver>4.4</ver>ver>4.5</ver>ver>4.6</ver>ver>4.7</ver>
+    <ver>4.2</ver><ver>4.3</ver><ver>4.4</ver><ver>4.5</ver><ver>4.6</ver><ver>4.7</ver>
   </compatibility>
   <downloadUrl>https://github.com/cividesk/com.cividesk.apikey/archive/v1.0.zip</downloadUrl>
   <comments>Once installed, an 'API Key' tab will be available on contact screens for which you are authorized to manage the key. You are authorized either if the contact if yourself, or if you are an administrator with the 'edit all contacts' permission.</comments>
