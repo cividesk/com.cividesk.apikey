@@ -59,7 +59,7 @@ class CRM_Contact_Page_View_APIKey extends CRM_Core_Page {
      * @access public
      */
     function edit() {
-        $controller = new CRM_Core_Controller_Simple('CRM_Contact_Form_APIKey', ts('API Key'), $this->_action);
+        $controller = new CRM_Core_Controller_Simple('CRM_Contact_Form_APIKey', ts('Api Key'), $this->_action);
         $controller->setEmbedded(TRUE);
 
         // set the userContext stack

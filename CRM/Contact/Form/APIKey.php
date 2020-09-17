@@ -32,7 +32,7 @@ class CRM_Contact_Form_APIKey extends CRM_Core_Form {
 
     function buildQuickForm() {
         $this->applyFilter('__ALL__', 'trim');
-        $this->add('text', 'api_key', ts('API Key'), array('size' => "32", 'maxlength' => "32"));
+        $this->add('text', 'api_key', ts('Api Key'), array('size' => "32", 'maxlength' => "32"));
 
         $buttons = array(
             array(
