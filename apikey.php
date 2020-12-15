@@ -89,6 +89,8 @@ function apikey_civicrm_managed(&$entities) {
 
 /**
  * Implementation of hook_civicrm_tabs
+ * 
+ * @deprecated
  */
 function apikey_civicrm_tabs( &$tabs, $contactID ) {
   $session = CRM_Core_Session::singleton();
@@ -96,6 +98,32 @@ function apikey_civicrm_tabs( &$tabs, $contactID ) {
   $is_admin = CRM_Core_Permission::check('administer CiviCRM') && CRM_Core_Permission::check('edit all contacts');
   $is_myself = ($contactID && ($contactID == $session->get('userID')));
   if ($is_admin || $is_myself) {
+    $url = CRM_Utils_System::url( 'civicrm/contact/view/apikey', "reset=1&cid={$contactID}&snippet=1" );
+    $tabs[] = array(
+      'id' => 'apiKey',
+      'url' => $url,
+      'title' => 'API Key',
+      'weight' => 300,
+    );
+  }
+}
+
+/**
+ * 'hook_civicrm_tabs' has been deprecated and is replaced by apikey_civicrm_tabset.
+ * 
+ * @since 5.31
+ * @see self::apikey_civicrm_tabs
+ * @see https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_tabs/
+ * @see https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_tabset/
+ */
+function apikey_civicrm_tabset($tabsetName, &$tabs, $context) {
+  $contactID = $context['contact_id'];
+  $session = CRM_Core_Session::singleton();
+
+  $is_admin = CRM_Core_Permission::check('administer CiviCRM') && CRM_Core_Permission::check('edit all contacts');
+  $is_myself = ($contactID && ($contactID == $session->get('userID')));
+
+  if (($tabsetName == 'civicrm/contact/view') && ($is_admin || $is_myself)) {
     $url = CRM_Utils_System::url( 'civicrm/contact/view/apikey', "reset=1&cid={$contactID}&snippet=1" );
     $tabs[] = array(
       'id' => 'apiKey',
