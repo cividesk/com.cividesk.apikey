@@ -15,7 +15,7 @@
         <tr class="crm-apikey-form-block">
           <td class="label">{$form.api_key.label}</td>
           <td>
-            {$form.api_key.html}&nbsp;{crmButton style="display:inline-block;vertical-align:middle;float:none!important;" href="javascript:void(0);" id="api_key_generate" class="generate-apikey" title="Generate API Key" icon="fa-key"}Generate{/crmButton}
+            {$form.api_key.html}&nbsp;{crmButton style="display:inline-block;vertical-align:middle;float:none!important;" href="javascript:void(0);" id="api_key_generate" class="generate-apikey" title="Generate API Key" icon="fa-key"}{ts}Generate{/ts}{/crmButton}
           </td>  
         </tr>
         <tr class="crm-apikey-form-block">
